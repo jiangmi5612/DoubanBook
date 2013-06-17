@@ -3,8 +3,11 @@
 
     <string name="app_name">DoubanBook</string>
     <string name="action_settings">Settings</string>
-	
+
     <!-- MainActivity -->
     <string name="img_desc_splash_image">Splash Image</string>
     <string name="txt_ctt_login_with_douban_account">Login With Douban Account</string>
+    <string name="title_activity_book_list">BookListActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

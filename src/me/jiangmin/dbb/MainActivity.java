@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -68,12 +69,13 @@ public class MainActivity extends Activity {
 	private PopupWindow mPopupWindow; // 弹出窗口
 	private PopupViewHolder mViewHolder; // 弹窗持有者
 	private int mSoundCount; // 待加载的音效数量
-
 	private SharedPreferences settings; // 局部配置
-	private final String PREFERENCE_NAME = "me.jiangmin.dbb.settings"; // 配置名称
 	private SoundPool pool; // 声效池
 	private HashMap<Integer, Integer> soundMap; // 声效映射
+	
+	private final String PREFERENCE_NAME = "me.jiangmin.dbb.settings"; // 配置文件名称
 	private ExitOneMoreTouch exitHelper = new ExitOneMoreTouch(); // 再按一次退出助手
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -195,12 +197,16 @@ public class MainActivity extends Activity {
 					}
 				}).execute(this);
 
-		// TODO 验证身份
 		if (mViewHolder.txtUsername.getText().toString().equals("jiangmin")
 				&& mViewHolder.txtPassword.getText().toString().equals("1")) {
 			// 验证通过，开启新的Activity
 			// 播放音效
 			playSound(1);
+			
+			Intent intent = new Intent(this, BookListActivity.class);
+			startActivity(intent);
+			this.finish();
+			
 		} else {
 			// 验证不通过，抖动窗口动画
 			Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
@@ -280,19 +286,18 @@ public class MainActivity extends Activity {
 	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		// TODO Auto-generated method stub
 		
 		//处理退出
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			if (exitHelper.isExit()) {
 				finish();
 				return true;
+			} else {
+				Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show(); 
+				exitHelper.doExitInOneSecond(); 
+				return true;
 			}
-		} else {
-			Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show(); 
-			exitHelper.doExitInOneSecond(); 
-			return true;
-		}
+		} 
 		return super.onKeyDown(keyCode, event);
 	}
 

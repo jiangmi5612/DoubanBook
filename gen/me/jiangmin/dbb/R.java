@@ -44,11 +44,13 @@ public final class R {
         public static final int txt_username=0x7f0b0005;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int popup_login=0x7f030001;
+        public static final int activity_book_list=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int popup_login=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
+        public static final int book_list=0x7f0a0000;
+        public static final int main=0x7f0a0001;
     }
     public static final class raw {
         public static final int notify=0x7f050000;
@@ -57,16 +59,18 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int btn_login=0x7f060005;
-        public static final int cmn_password=0x7f060007;
-        public static final int cmn_remember_username=0x7f060008;
-        public static final int cmn_username_or_email=0x7f060006;
+        public static final int btn_login=0x7f060007;
+        public static final int cmn_password=0x7f060009;
+        public static final int cmn_remember_username=0x7f06000a;
+        public static final int cmn_username_or_email=0x7f060008;
+        public static final int hello_world=0x7f060005;
         /**  MainActivity 
  MainActivity 
          */
         public static final int img_desc_splash_image=0x7f060002;
+        public static final int title_activity_book_list=0x7f060004;
         public static final int txt_ctt_login_with_douban_account=0x7f060003;
-        public static final int txt_login_popup_title=0x7f060004;
+        public static final int txt_login_popup_title=0x7f060006;
     }
     public static final class style {
         /** 
