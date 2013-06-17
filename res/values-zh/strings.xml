@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">豆瓣读书</string>
+    <string name="action_settings">设置</string>
+
+    <!-- MainActivity -->
+    <string name="img_desc_splash_image">闪屏图片</string>
+    <string name="txt_ctt_login_with_douban_account">用豆瓣账户登录</string>
+    <string name="txt_login_popup_title">登录豆瓣读书</string>
+    <string name="btn_login">登录</string>
+    <string name="cmn_username_or_email">用户名/邮箱</string>
+    <string name="cmn_password">密码</string>
+    <string name="cmn_remember_username">记住用户名</string>
+</resources>
