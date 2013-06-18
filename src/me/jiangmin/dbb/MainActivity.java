@@ -2,6 +2,7 @@ package me.jiangmin.dbb;
 
 import java.util.HashMap;
 
+import me.jiangmin.dbb.utils.Constant;
 import me.jiangmin.jimmy.Location.GetLocationTask;
 import me.jiangmin.jimmy.UI.ExitOneMoreTouch;
 import android.R.integer;
@@ -21,6 +22,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -73,7 +75,6 @@ public class MainActivity extends Activity {
 	private SoundPool pool; // 声效池
 	private HashMap<Integer, Integer> soundMap; // 声效映射
 	
-	private final String PREFERENCE_NAME = "me.jiangmin.dbb.settings"; // 配置文件名称
 	private ExitOneMoreTouch exitHelper = new ExitOneMoreTouch(); // 再按一次退出助手
 	
 
@@ -164,7 +165,7 @@ public class MainActivity extends Activity {
 				Gravity.CENTER_HORIZONTAL, 0, -100);
 
 		// 还原用户设置及用户名
-		settings = getSharedPreferences(PREFERENCE_NAME, 0);
+		settings = getSharedPreferences(Constant.PREFERENCE_NAME, 0);
 		boolean ifRemeber = settings.getBoolean("ifRemember", true);
 		String username = settings.getString("username", null);
 
@@ -299,6 +300,15 @@ public class MainActivity extends Activity {
 			}
 		} 
 		return super.onKeyDown(keyCode, event);
+	}
+	
+	public boolean onSettingsMenuItemClicked(MenuItem item) {
+		if (item.getItemId() == R.id.action_settings) {
+			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+			return true;
+		}
+		return false;
 	}
 
 }

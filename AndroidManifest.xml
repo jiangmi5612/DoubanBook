@@ -32,6 +32,10 @@
             android:name="me.jiangmin.dbb.BookListActivity"
             android:label="@string/title_activity_book_list" >
         </activity>
+        <activity
+            android:name="me.jiangmin.dbb.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>
