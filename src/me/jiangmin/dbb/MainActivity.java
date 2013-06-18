@@ -14,6 +14,7 @@ import android.media.SoundPool;
 import android.media.SoundPool.OnLoadCompleteListener;
 import android.os.Bundle;
 import android.os.Looper;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -148,7 +149,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+//		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
@@ -165,8 +166,9 @@ public class MainActivity extends Activity {
 				Gravity.CENTER_HORIZONTAL, 0, -100);
 
 		// 还原用户设置及用户名
-		settings = getSharedPreferences(Constant.PREFERENCE_NAME, 0);
-		boolean ifRemeber = settings.getBoolean("ifRemember", true);
+//		settings = getSharedPreferences(Constant.PREFERENCE_NAME, 0);
+		settings = PreferenceManager.getDefaultSharedPreferences(this);
+		boolean ifRemeber = settings.getBoolean("pref_ckb_ifRemember_username", true);
 		String username = settings.getString("username", null);
 
 		mViewHolder.ckbIfRemember.setChecked(ifRemeber);
@@ -268,7 +270,7 @@ public class MainActivity extends Activity {
 		} else {
 			editor.remove("username");
 		}
-		editor.putBoolean("ifRemeber", isChecked);
+		editor.putBoolean("pref_ckb_ifRemember_username", isChecked);
 		editor.commit();
 	}
 
@@ -302,13 +304,6 @@ public class MainActivity extends Activity {
 		return super.onKeyDown(keyCode, event);
 	}
 	
-	public boolean onSettingsMenuItemClicked(MenuItem item) {
-		if (item.getItemId() == R.id.action_settings) {
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
-			return true;
-		}
-		return false;
-	}
+	
 
 }

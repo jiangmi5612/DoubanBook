@@ -34,25 +34,36 @@ public final class R {
         public static final int activity_vertical_margin=0x7f090001;
     }
     public static final class drawable {
-        public static final int black_rect=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int splash=0x7f020002;
+        public static final int bg_main=0x7f020000;
+        public static final int bg_white=0x7f020001;
+        public static final int black_rect=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int ic_notification=0x7f020004;
+        public static final int ic_setting=0x7f020005;
+        public static final int ic_sync=0x7f020006;
+        public static final int splash=0x7f020007;
     }
     public static final class id {
-        public static final int action_settings=0x7f0d0008;
-        public static final int btn_realLogin=0x7f0d0002;
-        public static final int ckb_ifRemember=0x7f0d0007;
-        public static final int imageView1=0x7f0d0001;
-        public static final int lay_pop=0x7f0d0003;
-        public static final int main=0x7f0d0000;
-        public static final int textView1=0x7f0d0004;
-        public static final int txt_password=0x7f0d0006;
-        public static final int txt_username=0x7f0d0005;
+        public static final int action_settings=0x7f0d000d;
+        public static final int btn_realLogin=0x7f0d0007;
+        public static final int ckb_ifRemember=0x7f0d000c;
+        public static final int imageButton1=0x7f0d0000;
+        public static final int imageButton2=0x7f0d0001;
+        public static final int imageButton3=0x7f0d0002;
+        public static final int imageView1=0x7f0d0006;
+        public static final int lay_header=0x7f0d0003;
+        public static final int lay_pop=0x7f0d0009;
+        public static final int lsv_books=0x7f0d0004;
+        public static final int main=0x7f0d0005;
+        public static final int textView1=0x7f0d0008;
+        public static final int txt_password=0x7f0d000b;
+        public static final int txt_username=0x7f0d000a;
     }
     public static final class layout {
         public static final int activity_book_list=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int popup_login=0x7f030002;
+        public static final int fragment_header=0x7f030002;
+        public static final int popup_login=0x7f030003;
     }
     public static final class menu {
         public static final int book_list=0x7f0c0000;
@@ -66,6 +77,7 @@ public final class R {
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
         public static final int btn_login=0x7f070007;
+        public static final int cmn_email=0x7f07000c;
         public static final int cmn_password=0x7f070009;
         public static final int cmn_remember_username=0x7f07000a;
         public static final int cmn_username_or_email=0x7f070008;
@@ -74,29 +86,30 @@ public final class R {
  MainActivity 
          */
         public static final int img_desc_splash_image=0x7f070002;
-        public static final int pref_default_display_name=0x7f070010;
-        public static final int pref_description_social_recommendations=0x7f07000e;
+        public static final int pref_default_display_name=0x7f070012;
+        public static final int pref_description_social_recommendations=0x7f070010;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f070012;
+        public static final int pref_header_data_sync=0x7f070014;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f07000c;
+        public static final int pref_header_general=0x7f07000e;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f070015;
-        public static final int pref_ringtone_silent=0x7f070018;
-        public static final int pref_title_add_friends_to_messages=0x7f070011;
-        public static final int pref_title_display_name=0x7f07000f;
-        public static final int pref_title_new_message_notifications=0x7f070016;
-        public static final int pref_title_ringtone=0x7f070017;
-        public static final int pref_title_social_recommendations=0x7f07000d;
-        public static final int pref_title_sync_frequency=0x7f070013;
-        public static final int pref_title_system_sync_settings=0x7f070014;
-        public static final int pref_title_vibrate=0x7f070019;
+        public static final int pref_header_notifications=0x7f070017;
+        public static final int pref_ringtone_silent=0x7f07001a;
+        public static final int pref_summary_dont_check_if_on_public_device=0x7f07000b;
+        public static final int pref_title_add_friends_to_messages=0x7f070013;
+        public static final int pref_title_display_name=0x7f070011;
+        public static final int pref_title_new_message_notifications=0x7f070018;
+        public static final int pref_title_ringtone=0x7f070019;
+        public static final int pref_title_social_recommendations=0x7f07000f;
+        public static final int pref_title_sync_frequency=0x7f070015;
+        public static final int pref_title_system_sync_settings=0x7f070016;
+        public static final int pref_title_vibrate=0x7f07001b;
         public static final int title_activity_book_list=0x7f070004;
-        public static final int title_activity_settings=0x7f07000b;
+        public static final int title_activity_settings=0x7f07000d;
         public static final int txt_ctt_login_with_douban_account=0x7f070003;
         public static final int txt_login_popup_title=0x7f070006;
     }
@@ -152,8 +165,9 @@ public final class R {
     }
     public static final class xml {
         public static final int pref_data_sync=0x7f050000;
-        public static final int pref_general=0x7f050001;
-        public static final int pref_headers=0x7f050002;
-        public static final int pref_notification=0x7f050003;
+        public static final int pref_dbb=0x7f050001;
+        public static final int pref_general=0x7f050002;
+        public static final int pref_headers=0x7f050003;
+        public static final int pref_notification=0x7f050004;
     }
 }
